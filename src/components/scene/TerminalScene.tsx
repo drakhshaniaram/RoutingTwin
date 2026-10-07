@@ -1,12 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import {
-  ContactShadows,
-  Environment,
-  OrbitControls,
-  Sky,
-} from "@react-three/drei";
+import { ContactShadows, OrbitControls, Sky } from "@react-three/drei";
 import { Suspense } from "react";
 import { useSimStore } from "@/lib/sim/store";
 import { PRODUCTS, PRODUCT_ORDER } from "@/lib/products";
@@ -346,7 +341,7 @@ function SceneContents() {
         shadow-mapSize={[2048, 2048]}
       />
       <Sky sunPosition={[40, 20, 40]} turbidity={4} rayleigh={1.2} />
-      <Environment preset="warehouse" environmentIntensity={0.25} />
+      <hemisphereLight args={["#cfe8ff", "#d4b896", 0.55]} />
       <Ground />
       <RailTracks />
       <Pipelines />
